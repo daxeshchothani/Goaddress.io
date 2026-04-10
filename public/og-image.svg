@@ -1,0 +1,24 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="1080" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0A0F"/>
+      <stop offset="0.55" stop-color="#13131A"/>
+      <stop offset="1" stop-color="#1A1A24"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="210" y1="160" x2="600" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F6EF7"/>
+      <stop offset="1" stop-color="#00E5A0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="40" fill="url(#bg)"/>
+  <circle cx="1040" cy="110" r="210" fill="#4F6EF7" fill-opacity="0.14"/>
+  <circle cx="150" cy="500" r="230" fill="#00E5A0" fill-opacity="0.12"/>
+  <rect x="90" y="90" width="1020" height="450" rx="32" stroke="#2A2A3A" stroke-width="2" fill="#0F1016" fill-opacity="0.88"/>
+  <text x="150" y="210" fill="#F0F0F5" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="700">GoAddress</text>
+  <circle cx="524" cy="188" r="12" fill="#00E5A0"/>
+  <text x="150" y="285" fill="#8B8B9E" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="500">UK Postcode API & Address Lookup</text>
+  <text x="150" y="365" fill="#F0F0F5" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="600">Fast, structured postcode data</text>
+  <text x="150" y="418" fill="#F0F0F5" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="600">for modern SaaS products</text>
+  <rect x="150" y="470" width="260" height="54" rx="27" fill="#4F6EF7"/>
+  <text x="204" y="506" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">50 free lookups/day</text>
+</svg>
