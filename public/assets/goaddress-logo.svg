@@ -1,0 +1,13 @@
+<svg width="2048" height="526" viewBox="0 0 2048 526" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <circle cx="256" cy="104" r="66" fill="#3355D9"/>
+    <circle cx="138" cy="229" r="66" fill="#3355D9"/>
+    <circle cx="374" cy="229" r="66" fill="#3355D9"/>
+    <circle cx="256" cy="354" r="66" fill="#3355D9"/>
+    <path d="M138 229C138 164 191 112 256 112C321 112 374 164 374 229" stroke="#3355D9" stroke-width="62" stroke-linecap="round"/>
+  </g>
+  <g>
+    <text x="560" y="345" fill="#23D3DF" font-size="276" font-family="Poppins, Inter, sans-serif" font-weight="700">go</text>
+    <text x="968" y="345" fill="#0F2EA8" font-size="276" font-family="Poppins, Inter, sans-serif" font-weight="700">address</text>
+  </g>
+</svg>

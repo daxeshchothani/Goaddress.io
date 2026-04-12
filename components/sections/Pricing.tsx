@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { PLANS } from "@/lib/constants";
 
-const featuredPlanIds = ["free", "1000", "2500", "5000"] as const;
+const featuredPlanIds = ["free", "200", "500", "1000"] as const;
 const usageBreakpoints = [50, 200, 500, 1000, 2000, 2500, 5000, 10000, 15000, 20000, 30000] as const;
 
 function formatPounds(amount: number) {
@@ -57,7 +57,6 @@ function PlanCard({ plan, isYearly }: { plan: (typeof PLANS)[number]; isYearly: 
       <div className="flex items-start justify-between gap-4">
         <div>
           <h3 className="text-xl font-semibold text-text-primary">{plan.name}</h3>
-          <p className="mt-2 text-sm text-text-muted">{plan.daily.toLocaleString("en-GB")} lookups/day</p>
         </div>
         {isPopular ? (
           <span className="rounded-full bg-accent-blue px-3 py-1 text-xs font-semibold text-white">
@@ -71,7 +70,15 @@ function PlanCard({ plan, isYearly }: { plan: (typeof PLANS)[number]; isYearly: 
         <span className="pb-1 text-sm text-text-muted">/{isYearly ? "year" : "month"}</span>
       </div>
 
-      <ul className="mt-6 space-y-3">
+      <Button href="/register" className="mt-7 w-full" variant={isPopular ? "primary" : "outline"}>
+        {plan.id === "free" ? "Start Free Trial" : "Purchase"}
+      </Button>
+
+      <div className="my-6 h-px bg-border-color" />
+
+      <p className="text-2xl font-semibold text-text-primary">Key Features</p>
+
+      <ul className="mt-4 space-y-3">
         {plan.features.map((feature) => (
           <li className="flex items-start gap-3 text-sm text-text-muted" key={feature}>
             <CheckIcon className="mt-0.5 h-4 w-4 flex-none text-accent-mint" />
@@ -79,10 +86,6 @@ function PlanCard({ plan, isYearly }: { plan: (typeof PLANS)[number]; isYearly: 
           </li>
         ))}
       </ul>
-
-      <Button href="#api-key" className="mt-7 w-full" variant={isPopular ? "primary" : "outline"}>
-        Get started
-      </Button>
     </motion.article>
   );
 }

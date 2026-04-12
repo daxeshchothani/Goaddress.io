@@ -19,9 +19,7 @@ export function CTABanner() {
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <motion.div animate={{ scale: [1, 1.02, 1] }} transition={{ duration: 2.2, repeat: Infinity }}>
             <Button
-              href="https://portal.goaddress.io/register"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/register"
               variant="primary"
               className="px-7 py-3.5 text-base"
             >
@@ -29,9 +27,7 @@ export function CTABanner() {
             </Button>
           </motion.div>
           <Button
-            href="https://goaddress.io/document.php"
-            rel="noopener noreferrer"
-            target="_blank"
+            href="/docs"
             variant="ghost"
             className="px-7 py-3.5 text-base"
           >

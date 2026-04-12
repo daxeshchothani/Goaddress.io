@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const productLinks = [
   { label: "Home", href: "/#home" },
   { label: "Features", href: "/#features" },
@@ -56,10 +58,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2 text-xl font-semibold text-text-primary">
-              <span>GoAddress</span>
-              <span className="h-2.5 w-2.5 rounded-full bg-accent-mint" />
-            </div>
+            <Image
+              alt="GoAddress logo"
+              className="h-auto w-[210px]"
+              height={526}
+              src="/assets/goaddress-logo.svg"
+              width={2048}
+            />
             <p className="mt-4 max-w-sm text-sm leading-7 text-text-muted">The UK&apos;s most reliable postcode API.</p>
             <a className="mt-4 inline-block text-sm font-medium text-text-primary transition-colors hover:text-accent-mint" href="mailto:support@goaddress.io">
               support@goaddress.io

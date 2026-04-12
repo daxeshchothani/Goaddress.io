@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { navLinks, siteConfig } from "@/lib/constants";
@@ -77,12 +78,19 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <button
-          className="flex items-center gap-2 text-lg font-semibold tracking-tight text-text-primary"
+          aria-label={`${siteConfig.name} home`}
+          className="flex items-center"
           onClick={() => handleNavigate("#home")}
           type="button"
         >
-          <span>{siteConfig.name}</span>
-          <span className="h-2.5 w-2.5 rounded-full bg-accent-mint shadow-[0_0_20px_rgba(0,229,160,0.8)]" />
+          <Image
+            alt={`${siteConfig.name} logo`}
+            className="h-auto w-[176px] sm:w-[196px]"
+            height={526}
+            priority
+            src="/assets/goaddress-logo.svg"
+            width={2048}
+          />
         </button>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -110,7 +118,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:block">
-          <Button href={pathname === "/" ? "#api-key" : "/#api-key"} variant="primary" className="px-6 py-3 text-sm">
+          <Button href="/register" variant="primary" className="px-6 py-3 text-sm">
             Get Free API Key
           </Button>
         </div>
@@ -157,7 +165,7 @@ export function Navbar() {
                   </a>
                 );
               })}
-              <Button href={pathname === "/" ? "#api-key" : "/#api-key"} variant="primary" className="mt-2 w-full">
+              <Button href="/register" variant="primary" className="mt-2 w-full">
                 Get Free API Key
               </Button>
             </div>

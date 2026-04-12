@@ -20,6 +20,12 @@ export default function HomePage() {
     <>
       <Navbar />
       <main>
+        <div aria-hidden="true" className="site-ambient">
+          <span className="orb orb-one" />
+          <span className="orb orb-two" />
+          <span className="orb orb-three" />
+          <span className="grid-shimmer" />
+        </div>
         <Hero />
         <TrustedBy />
         <HowItWorks />
