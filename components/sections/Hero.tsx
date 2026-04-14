@@ -15,6 +15,7 @@ export function Hero() {
   const [isSearching, setIsSearching] = useState(false);
   const [visibleResponseCount, setVisibleResponseCount] = useState(responseEntries.length);
   const [isStreamingResponse, setIsStreamingResponse] = useState(false);
+  const introEase = [0.22, 1, 0.36, 1] as const;
   const introVariants = {
     hidden: { opacity: 0, y: 28 },
     show: {
@@ -22,7 +23,7 @@ export function Hero() {
       y: 0,
       transition: {
         duration: 0.75,
-        ease: [0.22, 1, 0.36, 1],
+        ease: introEase,
         staggerChildren: 0.1,
       },
     },
@@ -30,7 +31,7 @@ export function Hero() {
 
   const introItemVariants = {
     hidden: { opacity: 0, y: 18 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: introEase } },
   };
 
   const handleSearch = () => {
@@ -139,7 +140,7 @@ export function Hero() {
           animate={{ opacity: 1 }}
           className="relative lg:sticky lg:top-24"
           initial={{ opacity: 0, y: 24 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, ease: introEase }}
         >
           <motion.div
             animate={{ opacity: [0.45, 0.8, 0.45], scale: [0.98, 1.04, 0.98] }}

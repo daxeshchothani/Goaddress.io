@@ -3,22 +3,28 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 
-export type DropdownOption = {
-  value: string;
+export type DropdownOption<TValue extends string = string> = {
+  value: TValue;
   label: string;
   description?: string;
   rightText?: string;
 };
 
-type DropdownMenuProps = {
-  value: string;
-  options: DropdownOption[];
-  onChange: (value: string) => void;
+type DropdownMenuProps<TValue extends string = string> = {
+  value: TValue;
+  options: DropdownOption<TValue>[];
+  onChange: (value: TValue) => void;
   className?: string;
   compact?: boolean;
 };
 
-export function DropdownMenu({ value, options, onChange, className = "", compact = false }: DropdownMenuProps) {
+export function DropdownMenu<TValue extends string>({
+  value,
+  options,
+  onChange,
+  className = "",
+  compact = false,
+}: DropdownMenuProps<TValue>) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
 

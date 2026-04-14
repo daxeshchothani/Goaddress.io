@@ -1,5 +1,4 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
 import { ArrowRightIcon, BookOpenIcon, CheckCircleIcon, CommandLineIcon } from "@heroicons/react/24/outline";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
@@ -60,6 +59,20 @@ const responseOne = `{
     "104 Warden Road"
   ],
   "raw_address_res": [
+    {
+      "raw_address": "100 Warden Road",
+      "street": "Warden Road",
+      "city": "London",
+      "county": "Metropolitan Police",
+      "country": "England"
+    }
+  ],
+  "extra_info": {
+    "latitude": 51.5562,
+    "longitude": -0.2001
+  },
+  "usage_today": 14899
+}`;
 
 const authSnippet = `Authorization: Bearer YOUR_API_TOKEN`;
 
@@ -80,20 +93,6 @@ const requestFlow = [
     text: "Each response returns structured address data and usage information you can log or cache.",
   },
 ];
-    {
-      "raw_address": "100 Warden Road",
-      "street": "Warden Road",
-      "city": "London",
-      "county": "Metropolitan Police",
-      "country": "England"
-    }
-  ],
-  "extra_info": {
-    "latitude": 51.5562,
-    "longitude": -0.2001
-  },
-  "usage_today": 14899
-}`;
 
 const responseTwo = `{
   "query": "100",
