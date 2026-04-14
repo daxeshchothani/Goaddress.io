@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { DropdownMenu } from "@/components/ui/DropdownMenu";
 
 const monthlyData = [0, 2, 3, 2, 5, 4, 6, 5, 8, 7, 9, 10];
 const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -28,25 +29,29 @@ export default function UsageAnalyticsPage() {
 
       <section className="rounded-3xl border border-white/10 bg-[#0b1222]/80 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-10">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <select
-            className="h-12 rounded-xl border border-white/15 bg-white/5 px-4 text-sm font-semibold text-slate-100 outline-none"
-            onChange={(event) => setPeriod(event.target.value)}
+          <DropdownMenu
+            className="w-full sm:max-w-[220px]"
+            compact
+            onChange={setPeriod}
+            options={[
+              { label: "This Month", value: "This Month" },
+              { label: "Last Month", value: "Last Month" },
+              { label: "This Quarter", value: "This Quarter" },
+              { label: "This Year", value: "This Year" },
+            ]}
             value={period}
-          >
-            <option>This Month</option>
-            <option>Last Month</option>
-            <option>This Quarter</option>
-            <option>This Year</option>
-          </select>
+          />
 
-          <select
-            className="h-12 rounded-xl border border-white/15 bg-white/5 px-4 text-sm font-semibold text-slate-100 outline-none"
-            onChange={(event) => setChartType(event.target.value)}
+          <DropdownMenu
+            className="w-full sm:max-w-[190px]"
+            compact
+            onChange={setChartType}
+            options={[
+              { label: "Line Chart", value: "Line Chart" },
+              { label: "Bar Chart", value: "Bar Chart" },
+            ]}
             value={chartType}
-          >
-            <option>Line Chart</option>
-            <option>Bar Chart</option>
-          </select>
+          />
         </div>
 
         <div className="mt-8 rounded-2xl border border-white/10 bg-[#090f1d] p-4">

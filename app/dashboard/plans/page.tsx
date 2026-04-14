@@ -1,18 +1,16 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import { CheckIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { useMemo, useState } from "react";
 import { PLANS } from "@/lib/constants";
 import { readPortalUser, writePortalUser } from "@/lib/portalAuth";
+import { DropdownMenu } from "@/components/ui/DropdownMenu";
 
 const paidPlans = PLANS.filter((plan) => plan.id !== "free");
 
 export default function PlansPage() {
   const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
   const [selectedPlanId, setSelectedPlanId] = useState(paidPlans[0]?.id ?? "200");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [message, setMessage] = useState("");
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   const selectedPlan = useMemo(() => {
     return paidPlans.find((plan) => plan.id === selectedPlanId) ?? paidPlans[0];
@@ -20,17 +18,16 @@ export default function PlansPage() {
 
   const currentPrice = selectedPlan ? (billing === "yearly" ? selectedPlan.yearly : selectedPlan.monthly) : 0;
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Node;
-      if (dropdownRef.current && !dropdownRef.current.contains(target)) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    window.addEventListener("mousedown", handleClickOutside);
-    return () => window.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  const planOptions = useMemo(
+    () =>
+      paidPlans.map((plan) => ({
+        label: plan.name.replace("/day", " per day"),
+        description: `${plan.daily.toLocaleString("en-GB")} lookups/day`,
+        rightText: `£${billing === "yearly" ? plan.yearly : plan.monthly}/${billing === "yearly" ? "yr" : "mo"}`,
+        value: plan.id,
+      })),
+    [billing],
+  );
 
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-col items-center">
@@ -59,56 +56,7 @@ export default function PlansPage() {
 
         <p className="mt-8 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Select your plan</p>
 
-        <div className="relative mt-4 text-left" ref={dropdownRef}>
-          <button
-            className="flex h-14 w-full items-center justify-between rounded-xl border border-white/20 bg-white/5 px-4 text-sm font-semibold text-slate-100 transition-colors hover:border-cyan-300/40 hover:bg-white/10"
-            onClick={() => setIsDropdownOpen((current) => !current)}
-            type="button"
-          >
-            <span>
-              {selectedPlan?.name.replace("/day", " per day")} 
-              <span className="text-slate-400">- {selectedPlan?.daily.toLocaleString("en-GB")} lookups/day</span>
-            </span>
-            <ChevronDownIcon
-              className={`h-5 w-5 text-slate-300 transition-transform ${isDropdownOpen ? "rotate-180" : "rotate-0"}`}
-            />
-          </button>
-
-          {isDropdownOpen ? (
-            <div className="absolute z-20 mt-2 max-h-80 w-full overflow-y-auto rounded-xl border border-white/15 bg-[#0f182d] p-2 shadow-[0_20px_40px_rgba(0,0,0,0.45)]">
-              {paidPlans.map((plan) => {
-                const optionPrice = billing === "yearly" ? plan.yearly : plan.monthly;
-                const isSelected = plan.id === selectedPlanId;
-
-                return (
-                  <button
-                    className={`mb-1 flex w-full items-center justify-between rounded-lg px-3 py-3 text-left transition-colors ${
-                      isSelected
-                        ? "bg-gradient-to-r from-cyan-500/20 to-indigo-500/25 text-white"
-                        : "text-slate-200 hover:bg-white/10"
-                    }`}
-                    key={plan.id}
-                    onClick={() => {
-                      setSelectedPlanId(plan.id);
-                      setIsDropdownOpen(false);
-                    }}
-                    type="button"
-                  >
-                    <span>
-                      <span className="block text-sm font-semibold">{plan.name.replace("/day", " per day")}</span>
-                      <span className="block text-xs text-slate-400">{plan.daily.toLocaleString("en-GB")} lookups/day</span>
-                    </span>
-
-                    <span className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-cyan-300">£{optionPrice}/{billing === "yearly" ? "yr" : "mo"}</span>
-                      {isSelected ? <CheckIcon className="h-4 w-4 text-cyan-300" /> : null}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          ) : null}
-        </div>
+        <DropdownMenu className="mt-4" onChange={setSelectedPlanId} options={planOptions} value={selectedPlanId} />
 
         <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 text-left">
           <p className="text-sm font-semibold uppercase tracking-wide text-slate-400">Selected Plan</p>
