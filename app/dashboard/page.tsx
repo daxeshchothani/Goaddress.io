@@ -15,9 +15,9 @@ export default function DashboardPage() {
 
   return (
     <div className="mx-auto w-full max-w-6xl space-y-8">
-      <section className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-        <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Welcome back, {user?.firstName || "developer"}!</h1>
-        <p className="mt-3 text-base text-slate-300 sm:text-lg">Manage your account and track your API usage</p>
+      <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_20px_50px_rgba(37,99,235,0.10)] backdrop-blur-xl">
+        <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">Welcome back, {user?.firstName || "developer"}!</h1>
+        <p className="mt-3 text-base text-slate-600 sm:text-lg">Manage your account and track your API usage</p>
       </section>
 
       <section className="rounded-3xl border border-blue-300/30 bg-gradient-to-r from-[#1d2f8f] via-[#2559c8] to-[#2187d6] p-10 text-white shadow-[0_30px_80px_rgba(36,92,207,0.35)]">
@@ -32,25 +32,25 @@ export default function DashboardPage() {
         </a>
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-[#0b1222]/80 p-8 shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-10">
-        <h3 className="text-center text-3xl font-bold text-white sm:text-4xl">API Requests Today</h3>
+      <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_20px_50px_rgba(37,99,235,0.10)] backdrop-blur-xl sm:p-10">
+        <h3 className="text-center text-3xl font-bold text-slate-900 sm:text-4xl">API Requests Today</h3>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
-            <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Usage</p>
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
+            <p className="text-xs uppercase tracking-[0.18em] text-slate-500">Usage</p>
             <p className="mt-3 text-3xl font-bold text-cyan-300">{usagePercent}%</p>
           </div>
           <div className="text-center">
             <p className="text-6xl font-bold text-rose-300">{usedToday}</p>
-            <p className="mt-2 text-sm uppercase tracking-[0.18em] text-slate-400">Used</p>
+            <p className="mt-2 text-sm uppercase tracking-[0.18em] text-slate-500">Used</p>
           </div>
           <div className="text-center">
             <p className="text-6xl font-bold text-emerald-300">{dailyLimit}</p>
-            <p className="mt-2 text-sm uppercase tracking-[0.18em] text-slate-400">Remaining</p>
+            <p className="mt-2 text-sm uppercase tracking-[0.18em] text-slate-500">Remaining</p>
           </div>
         </div>
 
-        <div className="mt-8 h-3 rounded-full bg-white/10">
+        <div className="mt-8 h-3 rounded-full bg-slate-200">
           <div
             className="h-3 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500"
             style={{ width: `${Math.max(4, usagePercent)}%` }}
@@ -58,10 +58,10 @@ export default function DashboardPage() {
         </div>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          <a className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm font-semibold text-slate-200 transition-colors hover:border-cyan-300/40 hover:bg-white/10" href="/dashboard/api-testing">
+          <a className="rounded-2xl border border-slate-200 bg-white p-5 text-sm font-semibold text-slate-700 transition-colors hover:border-cyan-300/40 hover:bg-cyan-50" href="/dashboard/api-testing">
             Test endpoints in API Playground
           </a>
-          <a className="rounded-2xl border border-white/10 bg-white/5 p-5 text-sm font-semibold text-slate-200 transition-colors hover:border-cyan-300/40 hover:bg-white/10" href="/dashboard/usage-analytics">
+          <a className="rounded-2xl border border-slate-200 bg-white p-5 text-sm font-semibold text-slate-700 transition-colors hover:border-cyan-300/40 hover:bg-cyan-50" href="/dashboard/usage-analytics">
             View full usage analytics
           </a>
         </div>

@@ -6,17 +6,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#0A0A0F",
-        card: "#13131A",
-        "card-hover": "#1A1A24",
+        primary: "#F7F9FD",
+        card: "#FFFFFF",
+        "card-hover": "#F2F6FC",
         "accent-blue": "#4F6EF7",
         "accent-mint": "#00E5A0",
-        "text-primary": "#F0F0F5",
-        "text-muted": "#8B8B9E",
-        "border-color": "#2A2A3A",
+        "text-primary": "#111827",
+        "text-muted": "#5B6473",
+        "border-color": "#D6DFEB",
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(79, 110, 247, 0.15), 0 18px 60px rgba(0, 0, 0, 0.35)",
+        glow: "0 0 0 1px rgba(79, 110, 247, 0.12), 0 16px 40px rgba(79, 110, 247, 0.12)",
       },
       keyframes: {
         marquee: {

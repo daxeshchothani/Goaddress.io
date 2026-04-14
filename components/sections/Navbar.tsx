@@ -73,7 +73,9 @@ export function Navbar() {
   return (
     <header
       className={`sticky top-0 z-50 border-b transition-all duration-300 ${
-        scrolled ? "border-white/5 bg-black/60 backdrop-blur-md" : "border-transparent bg-transparent"
+        scrolled
+          ? "border-slate-200/90 bg-white/88 shadow-[0_10px_30px_rgba(15,23,42,0.08)] backdrop-blur-md"
+          : "border-transparent bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
@@ -103,7 +105,9 @@ export function Navbar() {
               <a
                 key={link.label}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                  isActive ? "text-text-primary" : "text-text-muted hover:text-text-primary"
+                  isActive
+                    ? "bg-accent-blue/10 text-accent-blue"
+                    : "text-text-muted hover:bg-slate-100 hover:text-text-primary"
                 }`}
                 href={link.href}
                 onClick={(event) => {
@@ -125,7 +129,7 @@ export function Navbar() {
 
         <button
           aria-label="Toggle navigation"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border-color bg-card text-text-primary md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-text-primary md:hidden"
           onClick={() => setMobileOpen((current) => !current)}
           type="button"
         >
@@ -137,7 +141,7 @@ export function Navbar() {
         {mobileOpen ? (
           <motion.div
             animate={{ opacity: 1, y: 0 }}
-            className="border-t border-border-color bg-primary/95 px-4 pb-4 pt-2 backdrop-blur-md md:hidden"
+            className="border-t border-slate-200 bg-white/96 px-4 pb-4 pt-2 backdrop-blur-md md:hidden"
             exit={{ opacity: 0, y: -8 }}
             initial={{ opacity: 0, y: -8 }}
           >
@@ -153,7 +157,7 @@ export function Navbar() {
                     className={`rounded-2xl border px-4 py-3 text-sm font-medium transition-colors ${
                       isActive
                         ? "border-accent-blue/40 bg-accent-blue/10 text-text-primary"
-                        : "border-border-color bg-card text-text-muted"
+                        : "border-slate-200 bg-white text-text-muted"
                     }`}
                     href={link.href}
                     onClick={(event) => {

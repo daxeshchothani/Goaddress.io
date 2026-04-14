@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -13,9 +13,10 @@ html {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at top, rgba(79, 110, 247, 0.14), transparent 34%),
-    linear-gradient(180deg, #0a0a0f 0%, #0a0a0f 100%);
-  color: #f0f0f5;
+    radial-gradient(circle at top, rgba(79, 110, 247, 0.14), transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(0, 229, 160, 0.09), transparent 34%),
+    linear-gradient(180deg, #f9fbff 0%, #f2f7ff 100%);
+  color: #111827;
 }
 
 .site-ambient {
@@ -30,7 +31,7 @@ body {
   position: absolute;
   border-radius: 9999px;
   filter: blur(50px);
-  opacity: 0.22;
+  opacity: 0.14;
   animation: drift 16s ease-in-out infinite;
 }
 
@@ -63,10 +64,10 @@ body {
 .site-ambient .grid-shimmer {
   position: absolute;
   inset: 0;
-  opacity: 0.18;
+  opacity: 0.1;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(17, 24, 39, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 24, 39, 0.08) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
   animation: grid-pan 22s linear infinite;
@@ -79,14 +80,14 @@ body {
 .live-demo-border {
   border: 1px solid transparent;
   background:
-    linear-gradient(#10111a, #10111a) padding-box,
+    linear-gradient(#ffffff, #ffffff) padding-box,
     conic-gradient(from 0deg, rgba(79, 110, 247, 0.2), rgba(0, 229, 160, 0.55), rgba(79, 110, 247, 0.2)) border-box;
   animation: spin-border 7s linear infinite;
 }
 
 .live-demo-scan {
   background: linear-gradient(90deg, transparent, rgba(0, 229, 160, 0.14), rgba(79, 110, 247, 0.2), transparent);
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
   filter: blur(0.5px);
 }
 
@@ -101,12 +102,12 @@ body {
   inset: 0;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.03) 0,
-    rgba(255, 255, 255, 0.03) 1px,
+    rgba(15, 23, 42, 0.04) 0,
+    rgba(15, 23, 42, 0.04) 1px,
     transparent 1px,
     transparent 4px
   );
-  opacity: 0.18;
+  opacity: 0.12;
   pointer-events: none;
 }
 
@@ -153,7 +154,7 @@ body {
 
 ::selection {
   background: rgba(0, 229, 160, 0.28);
-  color: #ffffff;
+  color: #0f172a;
 }
 
 @layer base {

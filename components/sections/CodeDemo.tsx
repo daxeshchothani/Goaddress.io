@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import oneDark from "react-syntax-highlighter/dist/esm/styles/prism/one-dark";
+import oneLight from "react-syntax-highlighter/dist/esm/styles/prism/one-light";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 
 type TabKey = "javascript" | "python" | "php" | "curl";
@@ -64,7 +64,7 @@ export function CodeDemo() {
               return (
                 <button
                   className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-                    isActive ? "bg-accent-blue text-white" : "text-text-muted hover:text-white"
+                    isActive ? "bg-accent-blue text-white" : "text-text-muted hover:bg-slate-100 hover:text-text-primary"
                   }`}
                   key={tab.key}
                   onClick={() => setActiveTab(tab.key)}
@@ -77,7 +77,7 @@ export function CodeDemo() {
           </div>
 
           <button
-            className="rounded-full border border-border-color bg-primary px-4 py-2 text-sm font-semibold text-text-primary transition-colors hover:border-accent-blue"
+            className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-text-primary transition-colors hover:border-accent-blue hover:bg-slate-50"
             onClick={handleCopy}
             type="button"
           >
@@ -98,14 +98,15 @@ export function CodeDemo() {
               customStyle={{
                 margin: 0,
                 borderRadius: "1.5rem",
-                background: "transparent",
+                border: "1px solid #dbe2ef",
+                background: "#f8fafc",
                 padding: "1.5rem",
                 fontSize: "0.92rem",
                 lineHeight: 1.8,
               }}
               language={tabs.find((tab) => tab.key === activeTab)?.language ?? "javascript"}
               showLineNumbers={false}
-              style={oneDark}
+              style={oneLight}
               wrapLongLines
             >
               {codeSamples[activeTab]}

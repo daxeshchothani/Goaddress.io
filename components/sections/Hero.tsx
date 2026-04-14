@@ -205,7 +205,7 @@ export function Hero() {
               </motion.div>
             </div>
 
-            <div className="live-console mt-5 rounded-3xl border border-border-color bg-[#0d0d12] p-5">
+            <div className="live-console mt-5 rounded-3xl border border-slate-200 bg-slate-50 p-5">
               <div className="mb-4 flex items-center justify-between text-[11px] uppercase tracking-[0.24em] text-text-muted">
                 <span>API response</span>
                 <span>

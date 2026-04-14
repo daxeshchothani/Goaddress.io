@@ -31,22 +31,22 @@ export default function PlansPage() {
 
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-col items-center">
-      <div className="w-full rounded-3xl border border-white/10 bg-white/5 p-8 text-center shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-        <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Choose Your Plan</h1>
-        <p className="mt-3 text-base text-slate-300 sm:text-lg">Instant access • No commitment</p>
+      <div className="w-full rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-[0_20px_50px_rgba(37,99,235,0.10)] backdrop-blur-xl">
+        <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">Choose Your Plan</h1>
+        <p className="mt-3 text-base text-slate-600 sm:text-lg">Instant access • No commitment</p>
       </div>
 
-      <div className="mt-8 w-full rounded-3xl border border-white/10 bg-[#0b1222]/80 p-8 text-center shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-        <div className="mx-auto flex w-full max-w-sm rounded-full bg-white/10 p-1">
+      <div className="mt-8 w-full rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-[0_20px_50px_rgba(37,99,235,0.10)] backdrop-blur-xl">
+        <div className="mx-auto flex w-full max-w-sm rounded-full bg-slate-100 p-1">
           <button
-            className={`flex-1 rounded-full px-5 py-2 text-sm font-semibold uppercase tracking-wide ${billing === "monthly" ? "bg-gradient-to-r from-cyan-500 to-indigo-500 text-white" : "text-slate-300"}`}
+            className={`flex-1 rounded-full px-5 py-2 text-sm font-semibold uppercase tracking-wide ${billing === "monthly" ? "bg-gradient-to-r from-cyan-500 to-indigo-500 text-white" : "text-slate-600"}`}
             onClick={() => setBilling("monthly")}
             type="button"
           >
             Monthly
           </button>
           <button
-            className={`flex-1 rounded-full px-5 py-2 text-sm font-semibold uppercase tracking-wide ${billing === "yearly" ? "bg-gradient-to-r from-cyan-500 to-indigo-500 text-white" : "text-slate-300"}`}
+            className={`flex-1 rounded-full px-5 py-2 text-sm font-semibold uppercase tracking-wide ${billing === "yearly" ? "bg-gradient-to-r from-cyan-500 to-indigo-500 text-white" : "text-slate-600"}`}
             onClick={() => setBilling("yearly")}
             type="button"
           >
@@ -54,17 +54,17 @@ export default function PlansPage() {
           </button>
         </div>
 
-        <p className="mt-8 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Select your plan</p>
+        <p className="mt-8 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Select your plan</p>
 
         <DropdownMenu className="mt-4" onChange={setSelectedPlanId} options={planOptions} value={selectedPlanId} />
 
-        <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 text-left">
-          <p className="text-sm font-semibold uppercase tracking-wide text-slate-400">Selected Plan</p>
-          <p className="mt-2 text-3xl font-bold text-white">{selectedPlan?.name}</p>
+        <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-left">
+          <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Selected Plan</p>
+          <p className="mt-2 text-3xl font-bold text-slate-900">{selectedPlan?.name}</p>
           <p className="mt-2 text-xl font-bold text-cyan-300">
             £{currentPrice} / {billing === "yearly" ? "year" : "month"}
           </p>
-          <p className="mt-2 text-sm text-slate-300">{selectedPlan?.daily.toLocaleString("en-GB")} full address look-ups per day</p>
+          <p className="mt-2 text-sm text-slate-600">{selectedPlan?.daily.toLocaleString("en-GB")} full address look-ups per day</p>
         </div>
 
         <button

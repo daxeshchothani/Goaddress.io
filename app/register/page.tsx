@@ -57,21 +57,21 @@ export default function RegisterPage() {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gradient-to-b from-[#cde7ff] via-[#4a9be8] to-[#1b56a8] px-4 py-12">
-      <div className="w-full max-w-md rounded-2xl bg-[#1d2b44] p-8 shadow-2xl">
+    <main className="flex min-h-screen items-center justify-center bg-gradient-to-b from-[#edf4ff] via-[#dbe9ff] to-[#f6fbff] px-4 py-12">
+      <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_20px_50px_rgba(37,99,235,0.12)]">
         <div className="mb-6 flex justify-center">
           <Image alt="GoAddress" className="h-auto w-[250px]" height={526} src="/assets/goaddress-logo.svg" width={2048} />
         </div>
 
-        <h1 className="text-center text-4xl font-bold text-white">Create your account</h1>
+        <h1 className="text-center text-4xl font-bold text-slate-900">Create your account</h1>
 
         <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
           <div>
-            <label className="mb-2 block text-sm font-semibold text-slate-300" htmlFor="fullName">
+            <label className="mb-2 block text-sm font-semibold text-slate-600" htmlFor="fullName">
               Full Name
             </label>
             <input
-              className="h-12 w-full rounded-xl border border-indigo-500 bg-slate-700 px-4 text-white outline-none transition-colors placeholder:text-slate-400 focus:border-indigo-400"
+              className="h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-indigo-400"
               id="fullName"
               onChange={(event) => setFullName(event.target.value)}
               placeholder="John Doe"
@@ -82,11 +82,11 @@ export default function RegisterPage() {
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-semibold text-slate-300" htmlFor="email">
+            <label className="mb-2 block text-sm font-semibold text-slate-600" htmlFor="email">
               Email Address
             </label>
             <input
-              className="h-12 w-full rounded-xl border border-slate-600 bg-slate-700 px-4 text-white outline-none transition-colors placeholder:text-slate-400 focus:border-indigo-400"
+              className="h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-indigo-400"
               id="email"
               onChange={(event) => setEmail(event.target.value)}
               placeholder="Enter your email"
@@ -97,11 +97,11 @@ export default function RegisterPage() {
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-semibold text-slate-300" htmlFor="password">
+            <label className="mb-2 block text-sm font-semibold text-slate-600" htmlFor="password">
               Password
             </label>
             <input
-              className="h-12 w-full rounded-xl border border-slate-600 bg-slate-700 px-4 text-white outline-none transition-colors placeholder:text-slate-400 focus:border-indigo-400"
+              className="h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-indigo-400"
               id="password"
               minLength={8}
               onChange={(event) => setPassword(event.target.value)}
@@ -113,11 +113,11 @@ export default function RegisterPage() {
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-semibold text-slate-300" htmlFor="confirmPassword">
+            <label className="mb-2 block text-sm font-semibold text-slate-600" htmlFor="confirmPassword">
               Confirm Password
             </label>
             <input
-              className="h-12 w-full rounded-xl border border-slate-600 bg-slate-700 px-4 text-white outline-none transition-colors placeholder:text-slate-400 focus:border-indigo-400"
+              className="h-12 w-full rounded-xl border border-slate-300 bg-white px-4 text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-indigo-400"
               id="confirmPassword"
               onChange={(event) => setConfirmPassword(event.target.value)}
               placeholder="Confirm password"
@@ -137,7 +137,7 @@ export default function RegisterPage() {
           </button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-slate-400">
+        <p className="mt-6 text-center text-sm text-slate-500">
           Already have an account?{" "}
           <a className="font-semibold text-indigo-300 hover:text-indigo-200" href="/login">
             Sign in here

@@ -22,12 +22,12 @@ export default function UsageAnalyticsPage() {
 
   return (
     <div className="mx-auto w-full max-w-6xl space-y-6">
-      <section className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-        <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">API Usage Analytics</h1>
-        <p className="mt-3 text-base text-slate-300 sm:text-lg">Visualise your API request usage</p>
+      <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_20px_50px_rgba(37,99,235,0.10)] backdrop-blur-xl">
+        <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">API Usage Analytics</h1>
+        <p className="mt-3 text-base text-slate-600 sm:text-lg">Visualise your API request usage</p>
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-[#0b1222]/80 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-10">
+      <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_20px_50px_rgba(37,99,235,0.10)] backdrop-blur-xl sm:p-10">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <DropdownMenu
             className="w-full sm:max-w-[220px]"
@@ -54,7 +54,7 @@ export default function UsageAnalyticsPage() {
           />
         </div>
 
-        <div className="mt-8 rounded-2xl border border-white/10 bg-[#090f1d] p-4">
+        <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-4">
           <svg className="h-[320px] w-full" viewBox="0 0 860 320">
             {Array.from({ length: 11 }).map((_, i) => (
               <line key={i} stroke="rgba(148,163,184,0.2)" strokeWidth="1" x1="40" x2="820" y1={20 + i * 26} y2={20 + i * 26} />
